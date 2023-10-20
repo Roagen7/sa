@@ -1,0 +1,127 @@
+Oct 17, 2023 5:46:10 PM jade.core.Runtime beginContainer
+INFO: ----------------------------------
+    This is JADE 4.5.0 - revision UNKNOWN of UNKNOWN
+    downloaded in Open Source, under LGPL restrictions,
+    at http://jade.tilab.com/
+----------------------------------------
+Oct 17, 2023 5:46:10 PM jade.imtp.leap.JICP.JICPSPeer activate
+INFO: JICP Secure Peer activated. (auth=true, ta=jicp://192.168.0.28:4646)
+Oct 17, 2023 5:46:10 PM jade.imtp.leap.LEAPIMTPManager initialize
+INFO: Listening for intra-platform commands on address:
+- jicp://192.168.0.28:4646
+
+Oct 17, 2023 5:46:11 PM jade.core.AgentContainerImpl joinPlatform
+SEVERE: Some problem occurred while joining agent platform.
+jade.core.ProfileException: Can't get a proxy to the Platform Manager - Caused by:  Remote object unreachable - Caused by:  ICPException delivering command to address jicp://192.168.0.28:5656. - Caused by:  I/O error sending/receiving data to 192.168.0.28:5656 - Caused by:  Unexpected error: java.security.InvalidAlgorithmParameterException: the trustAnchors parameter must be non-empty
+	at jade.core.ProfileImpl.createPlatformManager(ProfileImpl.java:529)
+	at jade.core.ProfileImpl.getPlatformManager(ProfileImpl.java:442)
+	at jade.core.ProfileImpl.getServiceManager(ProfileImpl.java:456)
+	at jade.core.AgentContainerImpl.init(AgentContainerImpl.java:348)
+	at jade.core.AgentContainerImpl.joinPlatform(AgentContainerImpl.java:499)
+	at jade.core.Runtime.createAgentContainer(Runtime.java:127)
+	at jade.Boot.main(Boot.java:91)
+Nested Exception:
+jade.core.IMTPException: Remote object unreachable - Caused by:  ICPException delivering command to address jicp://192.168.0.28:5656. - Caused by:  I/O error sending/receiving data to 192.168.0.28:5656 - Caused by:  Unexpected error: java.security.InvalidAlgorithmParameterException: the trustAnchors parameter must be non-empty
+	at jade.imtp.leap.PlatformManagerStub.getPlatformName(PlatformManagerStub.java:78)
+	at jade.imtp.leap.CommandDispatcher.setPlatformManager(CommandDispatcher.java:227)
+	at jade.imtp.leap.CommandDispatcher.getPlatformManagerProxy(CommandDispatcher.java:218)
+	at jade.imtp.leap.LEAPIMTPManager.getPlatformManagerProxy(LEAPIMTPManager.java:234)
+	at jade.core.ProfileImpl.createPlatformManager(ProfileImpl.java:526)
+	at jade.core.ProfileImpl.getPlatformManager(ProfileImpl.java:442)
+	at jade.core.ProfileImpl.getServiceManager(ProfileImpl.java:456)
+	at jade.core.AgentContainerImpl.init(AgentContainerImpl.java:348)
+	at jade.core.AgentContainerImpl.joinPlatform(AgentContainerImpl.java:499)
+	at jade.core.Runtime.createAgentContainer(Runtime.java:127)
+	at jade.Boot.main(Boot.java:91)
+Nested Exception:
+jade.core.UnreachableException: ICPException delivering command to address jicp://192.168.0.28:5656. - Caused by:  I/O error sending/receiving data to 192.168.0.28:5656 - Caused by:  Unexpected error: java.security.InvalidAlgorithmParameterException: the trustAnchors parameter must be non-empty
+	at jade.imtp.leap.CommandDispatcher.send(CommandDispatcher.java:855)
+	at jade.imtp.leap.CommandDispatcher.dispatchDirectly(CommandDispatcher.java:443)
+	at jade.imtp.leap.CommandDispatcher.dispatchSerializedCommand(CommandDispatcher.java:391)
+	at jade.imtp.leap.CommandDispatcher.dispatchCommand(CommandDispatcher.java:340)
+	at jade.imtp.leap.PlatformManagerStub.getPlatformName(PlatformManagerStub.java:69)
+	at jade.imtp.leap.CommandDispatcher.setPlatformManager(CommandDispatcher.java:227)
+	at jade.imtp.leap.CommandDispatcher.getPlatformManagerProxy(CommandDispatcher.java:218)
+	at jade.imtp.leap.LEAPIMTPManager.getPlatformManagerProxy(LEAPIMTPManager.java:234)
+	at jade.core.ProfileImpl.createPlatformManager(ProfileImpl.java:526)
+	at jade.core.ProfileImpl.getPlatformManager(ProfileImpl.java:442)
+	at jade.core.ProfileImpl.getServiceManager(ProfileImpl.java:456)
+	at jade.core.AgentContainerImpl.init(AgentContainerImpl.java:348)
+	at jade.core.AgentContainerImpl.joinPlatform(AgentContainerImpl.java:499)
+	at jade.core.Runtime.createAgentContainer(Runtime.java:127)
+	at jade.Boot.main(Boot.java:91)
+Nested Exception:
+jade.imtp.leap.ICPException: I/O error sending/receiving data to 192.168.0.28:5656 - Caused by:  Unexpected error: java.security.InvalidAlgorithmParameterException: the trustAnchors parameter must be non-empty
+	at jade.imtp.leap.JICP.JICPClient.send(JICPClient.java:138)
+	at jade.imtp.leap.JICP.JICPPeer.deliverCommand(JICPPeer.java:110)
+	at jade.imtp.leap.CommandDispatcher.send(CommandDispatcher.java:845)
+	at jade.imtp.leap.CommandDispatcher.dispatchDirectly(CommandDispatcher.java:443)
+	at jade.imtp.leap.CommandDispatcher.dispatchSerializedCommand(CommandDispatcher.java:391)
+	at jade.imtp.leap.CommandDispatcher.dispatchCommand(CommandDispatcher.java:340)
+	at jade.imtp.leap.PlatformManagerStub.getPlatformName(PlatformManagerStub.java:69)
+	at jade.imtp.leap.CommandDispatcher.setPlatformManager(CommandDispatcher.java:227)
+	at jade.imtp.leap.CommandDispatcher.getPlatformManagerProxy(CommandDispatcher.java:218)
+	at jade.imtp.leap.LEAPIMTPManager.getPlatformManagerProxy(LEAPIMTPManager.java:234)
+	at jade.core.ProfileImpl.createPlatformManager(ProfileImpl.java:526)
+	at jade.core.ProfileImpl.getPlatformManager(ProfileImpl.java:442)
+	at jade.core.ProfileImpl.getServiceManager(ProfileImpl.java:456)
+	at jade.core.AgentContainerImpl.init(AgentContainerImpl.java:348)
+	at jade.core.AgentContainerImpl.joinPlatform(AgentContainerImpl.java:499)
+	at jade.core.Runtime.createAgentContainer(Runtime.java:127)
+	at jade.Boot.main(Boot.java:91)
+Nested Exception:
+javax.net.ssl.SSLException: Unexpected error: java.security.InvalidAlgorithmParameterException: the trustAnchors parameter must be non-empty
+	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:133)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:371)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:314)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:309)
+	at java.base/sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1702)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:465)
+	at java.base/sun.security.ssl.SSLSocketImpl.ensureNegotiated(SSLSocketImpl.java:915)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppOutputStream.write(SSLSocketImpl.java:1285)
+	at jade.imtp.leap.JICP.JICPConnection$1.flush(JICPConnection.java:198)
+	at jade.imtp.leap.JICP.JICPConnection.writePacket(JICPConnection.java:175)
+	at jade.imtp.leap.JICP.JICPClient.send(JICPClient.java:105)
+	at jade.imtp.leap.JICP.JICPPeer.deliverCommand(JICPPeer.java:110)
+	at jade.imtp.leap.CommandDispatcher.send(CommandDispatcher.java:845)
+	at jade.imtp.leap.CommandDispatcher.dispatchDirectly(CommandDispatcher.java:443)
+	at jade.imtp.leap.CommandDispatcher.dispatchSerializedCommand(CommandDispatcher.java:391)
+	at jade.imtp.leap.CommandDispatcher.dispatchCommand(CommandDispatcher.java:340)
+	at jade.imtp.leap.PlatformManagerStub.getPlatformName(PlatformManagerStub.java:69)
+	at jade.imtp.leap.CommandDispatcher.setPlatformManager(CommandDispatcher.java:227)
+	at jade.imtp.leap.CommandDispatcher.getPlatformManagerProxy(CommandDispatcher.java:218)
+	at jade.imtp.leap.LEAPIMTPManager.getPlatformManagerProxy(LEAPIMTPManager.java:234)
+	at jade.core.ProfileImpl.createPlatformManager(ProfileImpl.java:526)
+	at jade.core.ProfileImpl.getPlatformManager(ProfileImpl.java:442)
+	at jade.core.ProfileImpl.getServiceManager(ProfileImpl.java:456)
+	at jade.core.AgentContainerImpl.init(AgentContainerImpl.java:348)
+	at jade.core.AgentContainerImpl.joinPlatform(AgentContainerImpl.java:499)
+	at jade.core.Runtime.createAgentContainer(Runtime.java:127)
+	at jade.Boot.main(Boot.java:91)
+Caused by: java.lang.RuntimeException: Unexpected error: java.security.InvalidAlgorithmParameterException: the trustAnchors parameter must be non-empty
+	at java.base/sun.security.validator.PKIXValidator.<init>(PKIXValidator.java:97)
+	at java.base/sun.security.validator.Validator.getInstance(Validator.java:173)
+	at java.base/sun.security.ssl.X509TrustManagerImpl.getValidator(X509TrustManagerImpl.java:309)
+	at java.base/sun.security.ssl.X509TrustManagerImpl.checkTrustedInit(X509TrustManagerImpl.java:183)
+	at java.base/sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:198)
+	at java.base/sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:132)
+	at java.base/sun.security.ssl.CertificateMessage$T12CertificateConsumer.checkServerCerts(CertificateMessage.java:638)
+	at java.base/sun.security.ssl.CertificateMessage$T12CertificateConsumer.onCertificate(CertificateMessage.java:473)
+	at java.base/sun.security.ssl.CertificateMessage$T12CertificateConsumer.consume(CertificateMessage.java:369)
+	at java.base/sun.security.ssl.SSLHandshake.consume(SSLHandshake.java:396)
+	at java.base/sun.security.ssl.HandshakeContext.dispatch(HandshakeContext.java:480)
+	at java.base/sun.security.ssl.HandshakeContext.dispatch(HandshakeContext.java:458)
+	at java.base/sun.security.ssl.TransportContext.dispatch(TransportContext.java:201)
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:172)
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1500)
+	at java.base/sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1415)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:450)
+	... 21 more
+Caused by: java.security.InvalidAlgorithmParameterException: the trustAnchors parameter must be non-empty
+	at java.base/java.security.cert.PKIXParameters.setTrustAnchors(PKIXParameters.java:200)
+	at java.base/java.security.cert.PKIXParameters.<init>(PKIXParameters.java:120)
+	at java.base/java.security.cert.PKIXBuilderParameters.<init>(PKIXBuilderParameters.java:104)
+	at java.base/sun.security.validator.PKIXValidator.<init>(PKIXValidator.java:94)
+	... 37 more
+Oct 17, 2023 5:46:11 PM jade.core.Runtime$1 run
+INFO: JADE is closing down now.
