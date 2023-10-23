@@ -1,25 +1,31 @@
 # encrypted run, no auth, between 2 containers
-. ./common.sh
+. ./prune_cert.sh
 
-kill -9
 
 mkdir $keystore_path $truststore_path $cert_path
 
-rm $keystore_path/*
-rm $truststore_path/*
-rm $cert_path/*.cer
-gen main 0
-gen container1 1
-gen container2 2
+mains=( m1 m2 m3 )
+federated=( f1 f2 f3 )
+all=( m1 m2 m3 f1 f2 f3 )
+# create private public key in keystore
+# gen additionaly extract public key and save it in cert folder
+for key in "${all[@]}"
+do
+    gen $key $key
+done
 
-import container1 0
-import container2 0
-
-import main 1
-import container2 1
-
-import main 2
-import container1 2
+for key in "${all[@]}"
+do
+    # trust every one that have cert in cert folder
+    import_trust $key trust_all
+    for main in "${mains[@]}"
+    do
+        if [[ $main != $key ]]; then
+            # add public keys of main and backups (to start ssh session)
+            import_keystore $main $key
+        fi
+    done 
+done
 
 #run_main main 0 0
 #run_container container1 1 1

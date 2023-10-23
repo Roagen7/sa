@@ -1,0 +1,19 @@
+Usage:
+java -cp <classpath> jade.Boot [options] [agents]
+Main options:
+    -container
+    -gui
+    -name <platform name>
+    -host <main container host>
+    -port <main container port>
+    -local-host <host where to bind the local server socket on>
+    -local-port <port where to bind the local server socket on>
+    -conf <property file to load configuration properties from>
+    -services <semicolon separated list of service classes>
+    -mtps <semicolon separated list of mtp-specifiers>
+     where mtp-specifier = [in-address:]<mtp-class>[(comma-separated args)]
+    -<property-name> <property-value>
+Agents: [-agents] <semicolon separated list of agent-specifiers>
+     where agent-specifier = <agent-name>:<agent-class>[(comma separated args)]
+
+Look at the JADE Administrator's Guide for more details
